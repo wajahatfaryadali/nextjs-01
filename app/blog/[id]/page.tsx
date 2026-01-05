@@ -1,14 +1,23 @@
-import React from "react";
+import React, { use } from "react";
 
-const page = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const { id } = await params;
+const BlogDetails = ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = use(params);
 
-  const post = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-    .then((res) => res.json())
-    .catch((error) => {
-      console.log(error);
-      return {};
-    });
+  //   const post =  fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  //     .then((res) => res.json())
+  //     .catch((error) => {
+  //       console.log(error);
+  //       return {};
+  //     });
+
+  const post = use(
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then((res) => res.json())
+      .catch((error) => {
+        console.log(error);
+        return {};
+      })
+  );
 
   console.log("single: ", post);
   return (
@@ -20,4 +29,4 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   );
 };
 
-export default page;
+export default BlogDetails;
