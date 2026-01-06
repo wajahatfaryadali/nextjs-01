@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -12,8 +11,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      {children}
+    <div className="flex min-h-screen items-center flex-col bg-zinc-50 font-sans dark:bg-black">
+      <div className="flex min-h-screen w-full flex-col max-w-3xl items-center pt-32 bg-white dark:bg-black sm:items-start">
+        {children}
+      </div>
     </div>
   );
 }
