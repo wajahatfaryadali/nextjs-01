@@ -9,3 +9,36 @@ https://nextjs.org/docs/app/getting-started/layouts-and-pages
 
 ### dynamic route can be use [userID] something like this 
 then we should use async for server components and params 
+
+# Day 2: Params and Search Params
+https://nextjs.org/docs/app/api-reference/file-conventions/default#params-optional
+
+params are values taken from the URL path that come from dynamic folder names in the App Router.
+
+```
+/shop/electronics/iphone
+
+params = {
+  category: "electronics",
+  product: "iphone"
+}
+
+📌 Created by folders like [category], [product]
+📌 Used for required route data
+```
+
+searchParams are values taken from the URL query string (the part after ?).
+
+```
+/shop?category=electronics&color=black
+
+
+searchParams = {
+  category: "electronics",
+  color: "black"
+}
+
+📌 Written after ? in the URL
+📌 Used for optional data like filters, sorting, pagination
+
+```
