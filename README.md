@@ -59,3 +59,66 @@ searchParams = {
 📌 Used for optional data like filters, sorting, pagination
 
 ```
+
+# [Dynamic Route](https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes#convention) + [Optional Catch All Segments](https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes#catch-all-segments)
+
+### Dynamic Route
+```
+app/blog/[slug]/page.js
+
+/blog/react
+/blog/nextjs
+
+params = { slug: "react" } it could be params = { slug: "nextjs" }
+
+Dynamic routes allow one page to handle many URLs using changing path values.
+```
+
+### Cath All Segments
+```
+app/docs/[...slug]/page.js
+
+/docs/intro
+/docs/intro/setup
+/docs/intro/setup/install
+
+params = {
+  slug: ["intro", "setup", "install"]
+}
+
+📌 At least ONE segment is required
+```
+
+### Optional Cath All Segments
+```
+Optional catch-all segments match zero or more URL parts.
+
+app/docs/[[...slug]]/page.js
+
+
+/docs
+/docs/intro
+/docs/intro/setup
+
+params = {
+  slug: undefined // when no segment or we are on "docs" route
+}
+// or
+params = {
+  slug: ["intro"]
+}
+
+
+
+📌 Segments are optional if user dont use any segment then page component will render 
+```
+
+
+📝 One-Line Notes
+
+[...slug] → must exist
+[[...slug]] → may exist or not
+
+
+
+
