@@ -1,8 +1,14 @@
 import Link from "next/link";
-import React from "react";
 
-const Services = (props) => {
-    console.log(props)
+const Services = async ({
+  params,
+  searchParams,
+}: {
+  params: Promise<{}>;
+  searchParams: Promise<{}>;
+}) => {
+  console.log("params*********** ", await params);
+  console.log("searchParams*********** ", await searchParams);
   return (
     // <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
     <main className="flex min-h-screen w-full flex-col max-w-3xl items-center pt-32 bg-white dark:bg-black sm:items-start">

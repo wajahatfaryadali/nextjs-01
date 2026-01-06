@@ -1,16 +1,19 @@
 ### Project for revisioning next js 16
 
 ### Node destails
+
 node v25.2.1 | npm v11.6.2
 
 # Day 1: Routing
 
 https://nextjs.org/docs/app/getting-started/layouts-and-pages
 
-### dynamic route can be use [userID] something like this 
-then we should use async for server components and params 
+### dynamic route can be use [userID] something like this
+
+then we should use async for server components and params
 
 # Day 2: Params and Search Params
+
 https://nextjs.org/docs/app/api-reference/file-conventions/default#params-optional
 
 params are values taken from the URL path that come from dynamic folder names in the App Router.
@@ -31,6 +34,20 @@ searchParams are values taken from the URL query string (the part after ?).
 
 ```
 /shop?category=electronics&color=black
+
+<Link
+    href={{
+        pathname: `/blog/${id}/comments`,
+        query: {
+            ref: "blogDetails",
+            userID: "11122112",
+            email: "testing email",
+        },
+    }}
+        className="text-blue-500 underline hover:text-white"
+    >
+        Read Comments
+</Link>
 
 
 searchParams = {
